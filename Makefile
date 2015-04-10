@@ -1,14 +1,13 @@
-OBJS := Ball.o Paddle.o Point.o Pong.o Resource.o Wall.o
+OBJS = Ball.o Paddle.o Point.o Pong.o Resource.o Wall.o
 
-LD_FLAGS += -laa 
-ADDED_CFLAGS += -g
+LOADLIBES += -laa
+LDFLAGS += -g
+CXXFLAGS += -g
+CXXFLAGS += -Wall
+CXXFLAGS += -Wextra
 
-%.o: %.cpp
-	$(CXX) -c $? -o $@ $(ADDED_CFLAGS)
-
-pong: $(OBJS)
-	$(CXX) $(OBJS) -o $@ $(LD_FLAGS)
-
+Pong: CC=${CXX}
+Pong: $(OBJS)
 
 clean:
-	rm -f *.o pong
+	rm -f $(OBJS) pong
