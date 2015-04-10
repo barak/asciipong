@@ -6,6 +6,7 @@
 #include <sstream>
 #include <iterator>
 #include <pwd.h>
+#include <unistd.h>
 
 using namespace std;
 
